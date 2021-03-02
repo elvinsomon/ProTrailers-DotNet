@@ -13,17 +13,26 @@ namespace ProTrailers.Pages
     public class IndexModel : PageModel
     {
         private readonly ProTrailers.Data.ProTrailersContext _context;
-
         public IndexModel(ProTrailers.Data.ProTrailersContext context)
         {
             _context = context;
         }
 
-        public IList<Movie> Movie { get; set; }
+        public Pagination<Movie> Movies { get; set; }
         public string filtroBusqueda { get; set; }
 
-        public async Task OnGetAsync(string busqueda)
+
+        public async Task OnGetAsync(string busqueda, int? pageIndex)
         {
+            if(busqueda != null)
+            {
+                pageIndex = 1;
+            }
+            else
+            {
+                busqueda = filtroBusqueda;
+            }
+
             filtroBusqueda = busqueda;
 
             IQueryable<Movie> movieIQ = from s in _context.Movies
@@ -35,7 +44,10 @@ namespace ProTrailers.Pages
                                        || s.Director.Contains(busqueda));
             }
 
-            Movie = await movieIQ.AsNoTracking().ToListAsync();
+            //Movies = await movieIQ.AsNoTracking().ToListAsync();
+
+            int sizePage = 4;
+            Movies = await Pagination<Movie>.CreateAsync(movieIQ.AsNoTracking(), pageIndex ?? 1, sizePage);
 
         }
     }
