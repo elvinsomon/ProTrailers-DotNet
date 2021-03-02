@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ProTrailers.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProTrailers.Data
 {
-    public class ProTrailersContext: DbContext
+    public class ProTrailersContext: IdentityDbContext
     {
         public ProTrailersContext (DbContextOptions<ProTrailersContext> options) 
             : base(options)

@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace ProTrailers
 {
@@ -22,16 +23,22 @@ namespace ProTrailers
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages(options => {
+                options.Conventions.AuthorizeFolder("/Admin");
+                options.Conventions.AllowAnonymousToPage("/Index");
+            });
+
 
             services.AddDbContext<ProTrailersContext>(options
                 => options.UseSqlServer(Configuration.GetConnectionString("ProTrailers_SQLServerDB")));
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddEntityFrameworkStores<ProTrailersContext>()
+                .AddDefaultTokenProviders();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -50,6 +57,7 @@ namespace ProTrailers
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

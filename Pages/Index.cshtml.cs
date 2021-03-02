@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ProTrailers.Models;
+using ProTrailers.Areas.Identity.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +14,16 @@ namespace ProTrailers.Pages
 {
     public class IndexModel : PageModel
     {
+        private readonly UserManager<IdentityUser> userManager;
+
         private readonly ProTrailers.Data.ProTrailersContext _context;
-        public IndexModel(ProTrailers.Data.ProTrailersContext context)
+        public IndexModel(UserManager<IdentityUser> userManager, ProTrailers.Data.ProTrailersContext context)
         {
+            this.userManager = userManager;
             _context = context;
         }
+
+
 
         public Pagination<Movie> Movies { get; set; }
         public string filtroBusqueda { get; set; }

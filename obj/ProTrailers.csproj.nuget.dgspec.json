@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elvin Somon\\Documents\\Algoritmos\\Pruebas C#\\Entrevista\\ProTrailers - DotNet V2.0\\ProTrailers\\ProTrailers.csproj": {}
+    "C:\\Users\\Elvin Somon\\Documents\\Algoritmos\\Pruebas C#\\Entrevista\\ProTrailers - DotNet V2.0 - copia\\ProTrailers\\ProTrailers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elvin Somon\\Documents\\Algoritmos\\Pruebas C#\\Entrevista\\ProTrailers - DotNet V2.0\\ProTrailers\\ProTrailers.csproj": {
+    "C:\\Users\\Elvin Somon\\Documents\\Algoritmos\\Pruebas C#\\Entrevista\\ProTrailers - DotNet V2.0 - copia\\ProTrailers\\ProTrailers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elvin Somon\\Documents\\Algoritmos\\Pruebas C#\\Entrevista\\ProTrailers - DotNet V2.0\\ProTrailers\\ProTrailers.csproj",
+        "projectUniqueName": "C:\\Users\\Elvin Somon\\Documents\\Algoritmos\\Pruebas C#\\Entrevista\\ProTrailers - DotNet V2.0 - copia\\ProTrailers\\ProTrailers.csproj",
         "projectName": "ProTrailers",
-        "projectPath": "C:\\Users\\Elvin Somon\\Documents\\Algoritmos\\Pruebas C#\\Entrevista\\ProTrailers - DotNet V2.0\\ProTrailers\\ProTrailers.csproj",
+        "projectPath": "C:\\Users\\Elvin Somon\\Documents\\Algoritmos\\Pruebas C#\\Entrevista\\ProTrailers - DotNet V2.0 - copia\\ProTrailers\\ProTrailers.csproj",
         "packagesPath": "C:\\Users\\Elvin Somon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elvin Somon\\Documents\\Algoritmos\\Pruebas C#\\Entrevista\\ProTrailers - DotNet V2.0\\ProTrailers\\obj\\",
+        "outputPath": "C:\\Users\\Elvin Somon\\Documents\\Algoritmos\\Pruebas C#\\Entrevista\\ProTrailers - DotNet V2.0 - copia\\ProTrailers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elvin Somon\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,18 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.3, )"
