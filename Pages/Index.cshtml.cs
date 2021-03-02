@@ -20,10 +20,23 @@ namespace ProTrailers.Pages
         }
 
         public IList<Movie> Movie { get; set; }
+        public string filtroBusqueda { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string busqueda)
         {
-            Movie = await _context.Movies.ToListAsync();
+            filtroBusqueda = busqueda;
+
+            IQueryable<Movie> movieIQ = from s in _context.Movies
+                                             select s;
+
+            if (!String.IsNullOrEmpty(busqueda))
+            {
+                movieIQ = movieIQ.Where(s => s.Titulo.Contains(busqueda)
+                                       || s.Director.Contains(busqueda));
+            }
+
+            Movie = await movieIQ.AsNoTracking().ToListAsync();
+
         }
     }
 }
