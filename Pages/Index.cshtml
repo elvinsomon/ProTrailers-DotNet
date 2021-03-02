@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container mx-auto">
+    <div class="container mt-12 border-gray-600 border-b-2 w-1/4">
+        <h1 class=" font-black text-gray-700 text-4xl">Trailers Disponibles</h1>
+    </div>
+
+    <div class="container mx-auto flex flex-row justify-between flex-wrap">
+        @foreach (var item in Model.Movie)
+        {
+            <div class="max-w-sm max-h-full rounded overflow-hidden shadow-lg mt-10">
+                @{string urlFinal = item.Video.Replace("watch?v=", "embed/");}
+                
+
+                <iframe style="width: 100%;"
+                        height="215"
+                        src="@urlFinal"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                <div class="px-6 py-4">
+                    <div class="font-bold text-black text-xl mb-2">@item.Titulo</div>
+                    <p class="text-gray-700 text-base">
+                        @item.Sinopsis
+                    </p>
+                    <br>
+                    <p><b class="font-bold">Dirigido por:</b> @item.Director</p>
+                    <p><b class="font-bold">Fecha de estreno:</b> @item.Fecha.ToShortDateString()</p>
+
+                </div>
+                <div class="px-6 py-4">
+                    <span class="inline-bloc bg-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-gray-200">@item.Genero</span>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="mt-5">
+
+    </div>
+
+</div>
+
