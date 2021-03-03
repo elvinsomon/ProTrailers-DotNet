@@ -53,7 +53,7 @@ namespace ProTrailers.Pages
 
             //Movies = await movieIQ.AsNoTracking().ToListAsync();
 
-            int sizePage = 4;
+            int sizePage = 6;
             Movies = await Pagination<Movie>.CreateAsync(movieIQ.AsNoTracking(), pageIndex ?? 1, sizePage);
 
         }
