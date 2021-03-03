@@ -221,3 +221,5 @@ C:\Users\Elvin Somon\Documents\Algoritmos\Pruebas C#\Entrevista\ProTrailers - Do
 C:\Users\Elvin Somon\Documents\Algoritmos\Pruebas C#\Entrevista\ProTrailers - DotNet V2.0 - copia\ProTrailers\obj\Debug\net5.0\ref\ProTrailersII.dll
 C:\Users\Elvin Somon\Documents\Algoritmos\Pruebas C#\Entrevista\ProTrailers - DotNet V2.0 - copia\ProTrailers\obj\Debug\net5.0\ProTrailersII.pdb
 C:\Users\Elvin Somon\Documents\Algoritmos\Pruebas C#\Entrevista\ProTrailers - DotNet V2.0 - copia\ProTrailers\obj\Debug\net5.0\ProTrailersII.genruntimeconfig.cache
+C:\Users\Elvin Somon\Documents\Algoritmos\Pruebas C#\Entrevista\ProTrailers - DotNet V2.0 - copia\ProTrailers\bin\Debug\net5.0\package-lock.json
+C:\Users\Elvin Somon\Documents\Algoritmos\Pruebas C#\Entrevista\ProTrailers - DotNet V2.0 - copia\ProTrailers\bin\Debug\net5.0\package.json

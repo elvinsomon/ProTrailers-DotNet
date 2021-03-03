@@ -1,0 +1,27 @@
+{
+  "name": "ProTrailers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css:build": "npx tailwind build ./wwwroot/css/site.css -o ./wwwroot/css/output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elvinsomon/ProTrailers-DotNet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elvinsomon/ProTrailers-DotNet/issues"
+  },
+  "homepage": "https://github.com/elvinsomon/ProTrailers-DotNet#readme",
+  "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
+  }
+}
