@@ -5,20 +5,35 @@
 }
 
 <div class="">
-    <div class="justify-start mt-12 border-gray-600 border-b-2 w-1/4">
+    <div class="justify-start mt-12 w-1/4 border-b-2 border-gray-600">
         <h1 class=" font-black text-gray-700 text-4xl">Trailers Disponibles</h1>
     </div>
 
 
-    <form asp-page="./Index" method="get" class="my-8">
+    @*<form asp-page="./Index" method="get" class="my-8">
         <div class="w-2/5 inline-flex justify-start items-center">
-                <input placeholder="Buscar" class="flex-1 focus:ring-4 focus:ring-gray-400 focus:ring-opacity-50 block pl-7 py-2 pr-12 sm:text-base border-b-2 rounded-md" type="text" name="busqueda" value="@Model.filtroBusqueda" />
-                <input class="flex-1 text-sm font-medium bg-gray-700 hover:bg-gray-500 rounded-lg text-white  hover:bg-bluegray-900 p-2 w-12 mx-2" type="submit" value="Buscar"/> |
-                <a class="flex-1 block text-base font-medium text-blue-900 mx-2" asp-page="./Index">Lista Completa</a>
+            <input placeholder="Buscar" class="flex-1 focus:ring-4 focus:ring-gray-400 focus:ring-opacity-50 block pl-7 py-2 pr-12 sm:text-base border-b-2 rounded-md" type="text" name="busqueda" value="@Model.filtroBusqueda" />
+            <input class="flex-1 text-sm font-medium bg-gray-700 hover:bg-gray-500 rounded-lg text-white  hover:bg-bluegray-900 p-2 w-12 mx-2" type="submit" value="Buscar" /> |
+            <a class="flex-1 block text-base font-medium text-blue-900 mx-2" asp-page="./Index">Lista Completa</a>
+        </div>
+    </form>*@
+
+
+    <form asp-page="./Index"method="get" accept-charset="UTF-8" class="form-inline my-8  float-left" role="search">
+        <div class="w-auto inline-flex justify-start items-center">
+            @*<input type="text" class="form-control bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-700" name="busqueda" placeholder="Buscar..." value="@Model.filtroBusqueda">*@
+            <input class=" px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-100 focus:border-blue-200 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" name="busqueda" placeholder="Buscar..." value="@Model.filtroBusqueda" />
+
+            <span class="mx-2 input-group-append">
+                <button class="btn btn-secondary" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+            <a class="flex-1 block text-base font-medium text-blue-900" asp-page="./Index">|  Lista Completa</a>
         </div>
     </form>
 
-    
+
 
     <div class="container mx-auto flex flex-row justify-between flex-wrap">
         @foreach (var item in Model.Movies)
@@ -55,14 +70,6 @@
         var nextDisabled = !Model.Movies.HasNextPage ? "disabled" : "";
     }
     <div class="bg-white px-4 py-3 flex items-center border-t border-gray-200 sm:px-6 mt-5">
-        <!--<a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
-            <span class="sr-only">Previous</span>-->
-        <!-- Heroicon name: solid/chevron-left -->
-        <!--<svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-            </svg>
-        </a>-->
-
         <a asp-page="./Index"
            asp-route-pageIndex="@(Model.Movies.PageIndex - 1)"
            class=" @prevDisabled disabled:bg-gray-300  relative inline-flex items-center px-2 py-2 ml-1 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
