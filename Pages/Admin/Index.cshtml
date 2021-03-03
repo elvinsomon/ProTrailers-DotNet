@@ -5,62 +5,70 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Titulo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Genero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Sinopsis)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Director)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Fecha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Video)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Movie) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sinopsis)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Director)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Video)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.MovieId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.MovieId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.MovieId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+    
 </table>
+
+<div class="container mx-auto">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card shadow-2xl">
+                <div class="card-header text-gray-700 text-3xl font-bold">Listado de Trailers</div>
+                <div class="card-body">
+                    <a asp-page="Create" class="btn text-white bg-green-600 hover:bg-green-700 btn-sm  font-bold px-3 py-2" title="Agregar Nuevo Trailer">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Create New
+                    </a>
+
+                    <br />
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Movie[0].Titulo)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Movie[0].Genero)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Movie[0].Director)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Movie[0].Fecha)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Movie)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Titulo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Genero)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Director)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Fecha)
+                                        </td>
+                                        <td>
+                                            <a asp-page="./Edit" asp-route-id="@item.MovieId"><button class="btn text-white bg-blue-700 hover:bg-blue-600 btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button>Edit</a> |
+                                            <a  asp-page="./Details" asp-route-id="@item.MovieId"><button class="btn text-white bg-blue-700 hover:bg-blue-600 btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button>Details</a> |
+                                            <a class="btn btn-sm bg-red-700 hover:bg-red-600 text-white" asp-page="./Delete" asp-route-id="@item.MovieId"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
