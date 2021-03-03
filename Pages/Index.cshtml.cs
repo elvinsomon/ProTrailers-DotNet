@@ -51,7 +51,6 @@ namespace ProTrailers.Pages
                                        || s.Director.Contains(busqueda));
             }
 
-            //Movies = await movieIQ.AsNoTracking().ToListAsync();
 
             int sizePage = 6;
             Movies = await Pagination<Movie>.CreateAsync(movieIQ.AsNoTracking(), pageIndex ?? 1, sizePage);

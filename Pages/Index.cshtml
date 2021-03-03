@@ -5,14 +5,14 @@
 }
 
 <div class="">
-    <div class="container mt-12 border-gray-600 border-b-2 w-1/4">
+    <div class="justify-start mt-12 border-gray-600 border-b-2 w-1/4">
         <h1 class=" font-black text-gray-700 text-4xl">Trailers Disponibles</h1>
     </div>
 
 
     <form asp-page="./Index" method="get" class="my-8">
         <div class="w-2/5 inline-flex justify-start items-center">
-                <input placeholder="Buscar" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block pl-7 py-2 pr-12 sm:text-base border-gray-300 rounded-md" type="text" name="busqueda" value="@Model.filtroBusqueda" />
+                <input placeholder="Buscar" class="flex-1 focus:ring-4 focus:ring-gray-400 focus:ring-opacity-50 block pl-7 py-2 pr-12 sm:text-base border-b-2 rounded-md" type="text" name="busqueda" value="@Model.filtroBusqueda" />
                 <input class="flex-1 text-sm font-medium bg-gray-700 hover:bg-gray-500 rounded-lg text-white  hover:bg-bluegray-900 p-2 w-12 mx-2" type="submit" value="Buscar"/> |
                 <a class="flex-1 block text-base font-medium text-blue-900 mx-2" asp-page="./Index">Lista Completa</a>
         </div>
